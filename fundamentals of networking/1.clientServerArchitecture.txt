@@ -1,0 +1,13 @@
+Client-Server Architecture
+1. Machines are expensive , applications are complex
+2. Seperate the application into two components
+3. Expensive workload can be done on the Server
+4. Clients call servers to perform expensive tasks
+5. Remote procedure call (RPC) was born
+
+Client-Server Arcitecture Benefits
+1. Servers have beefy hardware
+2. Clients have commodity hardware
+3. Clients can still perform lightweight tasks
+4. Client no longer require dependencies
+5. However, we need a communication model
