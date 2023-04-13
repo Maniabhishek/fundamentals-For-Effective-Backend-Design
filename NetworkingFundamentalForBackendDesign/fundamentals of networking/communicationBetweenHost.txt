@@ -1,0 +1,36 @@
+Communication between Hosts
+
+=> I need to send a message from HOST A to HOST B 
+=> Usually a request to do something on B (RPC)
+=> Each host network card has a unique Media Access Control address
+
+=> A send a message to B specifying the MAC address 
+=> for example there are 4 host connected to the network , each one of them will get the message but only B will accept it , all the host will go until layer 2 data link layer checks the MAC address and dedicated host will accept it will proceed with further layers
+
+=> Imagine millions of machines 
+=> We need a way to eliminate the need to send it to everyone 
+=> The address need to get better 
+=> We need to route , meed the  IP address
+
+For example one would why do you need ip address MAC address is unique just send me directly , why to send to anyone else , but that is not possible , it would be like scanning in way too many devices to find out the correct one 
+
+=> The IP address is build in two parts (4 bytes)
+=> One part to identify the network , the other is the host 
+=> We use the network portion to eliminate many networks 
+=> the host part is used to find the host 
+=> Still needs MAC addresses!
+
+Lets understand it with an example 
+For example under 193.192.1 IP has 3 host(A,B,C) and  192.234.1 IP has 3 another host (A,B,C) 
+
+A from one network wants to communicate to B , then it is the router wich will connect two network together and will connect it to B 
+
+Router is 3 layer device which needs to see the IP address , it has two parts and which helps selecting target network  and device 
+
+But host will have many apps 
+=> Its not enough just to address the host 
+=> The host is running many apps each with different requirements
+=> Meets ports 
+=> You can send an HTTP request on port 80 , a DNS request on PORT53 and an SSH request on PORT 22 all running on the same server 
+
+
