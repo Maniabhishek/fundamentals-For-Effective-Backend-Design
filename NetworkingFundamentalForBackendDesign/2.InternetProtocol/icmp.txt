@@ -1,0 +1,29 @@
+ICMP(Internet control message protocol)
+
+# Stands for Internet messages 
+# Designed for informational messages 
+	## Host unreachable , port unreachable , fragmentation needed 
+	## packet expired (infinite loop in router
+# Uses IP directly 
+# PING and trace route use it 
+# Doesn’t require listeners or PORTS to be opened 
+
+# some firewalls block ICMP for security reasons 
+# That is why PING might not work in those cases 
+# Disabling ICMP also can cause real damage with connection establishment 
+	## fragmentation needed
+# ping   google.com
+
+For example sometime you find out that your IP packet is dropped because it had ICMP because firewall has blocked ICMP
+
+Traceroute 
+# can you identify the entire path your IP packet takes 
+# clever use of TTL
+# Increment TTL slowly and you will get the router IP address for each hop
+# Doesn’t always work as path changes and ICMP might be blocked 
+
+For example you can check “traceroute google.come”
+
+It is IP level protocol , that is used to send information back and forth , but some firewall blocks it ,
+if it block it means you can’t send the critical messages , you can get into wierd situation , ping , traceroute 
+uses it ,you won’t get the important information like fragmentation needed , port unreachable 
