@@ -1,0 +1,13 @@
+IP Packet 
+
+We can think of it as bunch data , with source and destination address
+
+# The IP Packet has headers and data sections 
+# IP Packet header is 20 bytes (can go up to 60 bytes if options are enabled )
+# Data section can go up to 65536
+
+MTU (maximum transmission unit ) in the internet is 1500 bytes
+
+So basically IP packet has to fit into the frames which has size of 1500 and if the IP packet larger than this then two things will happen either it will throw ICMP message , or you send it in two frames 1500 in one frames and rest in other but this has security issue because assembling on the other side , packet won’t be received in same order it was sent thus assembling it will be costly on the host side , and also a security issue ,because some else  can try to send other fragment 
+
+Source IP Address can be spoofed but the first place ip packet will reach to you ISP which mostly blocks spoofing it 
