@@ -1,0 +1,63 @@
+ARP(address resolution protocol)
+Why ARP?
+# When you know the IP address but what if you don’t know the destination MAC address which is most of the situation 
+
+# we use DNS to get the IP address , when you know IP address buy you dont  know the MAC address , in order to map ip address to MAC address that’s why we need ARP 
+
+
+# we need the MAC address to send the frames (layer 2)
+# Most of the time we know the IP address but not the MAC
+# ARP table is cached representation that maps IP address to Mac 
+
+Network Frame 
+A and B are in the same network A want to send the GET/ request to B
+
+A :
+IP : 10.0.0.2
+MAC : aa:nm:23:7f:c0:07
+
+B:
+IP 10.0.0.3
+MAC : bb:ab:dd:11:22:33
+Port 8080
+
+GET/ (get request )
+GET/8080   this is the port layer 4 segment 
+GET/8080 10.0.0.3       destination port 
+2312 GET/ 8080 10.0.0.3  2312 some random source port 
+10.0.0.2 2312 GET/ 8080 10.0.0.3     source IP address
+
+But this is not enough , this is layer 3, since in the same network switches can switch it will need the MAC address 
+
+aa:nm:23:7f:c0:07  10.0.0.2 2312 GET/ 8080 10.0.0.3    bb:ab:dd:11:22:33
+
+
+Shorter format 
+
+aa 2 GET/  3 bb
+
+Lets see with a example 
+
+# A  Wants to send the GET/ request it will have destination port destination IP address something like this aa 2 GET/  3 but it doesn’t have the destination MAC address , how do we know that 
+
+# IP 10.0.0.2 wants to connect to IP 10.0.0.3
+# Host 2 checks if host 3 is in the same subnet , which is 
+#  Host 2 needs the MAC address of host 3
+# Host 2 checks its ARP table and its not there(it will check if it ever visited host 3) if not there then
+# Host 2 sends an ARP request broadcast to all machines in its network
+# who has IP address 10.0.0.3
+# everyone in the network gets it host 3 , who has the IP address 3 , sp # host 3 will replies it him so , immediately ARP table is updated and insert it into IP packet 
+# next time 2 want to connect to 3 then it doesn’t need ARP request 
+
+Lets take another example ,
+
+# if 10.0.0.3 (x) is not in the same subnet 
+# Host 2 checks if the target is in same subnet , it is not 
+# Host 2 needs to talk it gateway
+# to connect we need the MAC address (how do. We get it we do the ARP request )
+# now suppose gateway IP is 10.0.0.1(1) then it will ask which 1 then tell me MAC address , but this is dangerous someone in the same subnet can answer it or fake itself then all the packet will go to that machine 
+
+Attacks can be performed on ARP (ARP poisoning)
+
+
+
