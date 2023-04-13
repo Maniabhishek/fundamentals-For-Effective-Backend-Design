@@ -1,1 +1,47 @@
+IP Building blocks 
 
+IP address :
+=> Layer 3 property 
+=> can be set automatically or statistically
+=> Network and Host portion
+=> 4 bytes in IPv4 - 32 bits 
+
+Network Vs Host 
+=> a.b.c.d/x (a.b.c.d are integers) x is the network bits and remains are host , 
+=> 192.168.223.0/12
+=> the first 24 bits (3 bytes ) are network the rest 8 are for host 
+=> this means we can have 2^24  (16777216) networks and each network has 2^8 (255) hosts
+=> Also called a subnet
+
+Subnet Mask : 
+=>  192.168.223.0/12 is also called a subnet 
+=> the subnet has a mask 255.255.255.0
+=> subnet mask is used to determine whether an IP Is in the same subnet , for example , lets say when we are send data to a particular IP we ask whether this IP address is in the same network if same then send the MAC address directly rather than IP if not do the required.
+
+
+Default Gateway : => Most networks consists of host and a default Gateway 
+So if host in a network wants to talk to another host outside of the subnet or network then there must be host which is gateway to which host will talk to, getaway is just device which happen to have two network interface , one network for inner subnet and other one for another network , or may be 3 , 4 can be anything 
+=> Host A can talk to B directly if both are in the same subnet 
+=> Otherwise A sends it to some who might know , the gateway 
+=> The Gateway has an IP address and each host should know its gateway
+
+
+Eg., Host 192.168.1.3 wants to talk to 192.168.1.2
+192.168.1.3 applies subnet mask to itself and the destination IP 192.168.1.2 , once it makes request  router checks and find out it is in the same subnet thus , router may not even to layer 3  and switches will switch to the host directly 
+
+#  source 255.255.255.0 && 192.168.1.3 = 192.168.1.0
+# destination source 255.255.255.0 && 192.168.1.2 = 192.168.1.0
+
+If you see it is same subnet thus no need to route , it will just switch , it just need layer 2 in this case 
+
+Eg., Host 192.168.1.3 wants to talk to 192.168.2.2
+
+# 192.168.1.3 applies subnet mask to itself and the the destination IP 192.168.2.2
+
+#  source 255.255.255.0 && 192.168.1.3 = 192.168.1.0
+# destination source 255.255.255.0 && 192.168.2.2 = 192.168.2.0
+
+# Not the same subnet ! The packet is sent to the default Gateway 192.168.1.100 that is the router and it will have to route different subnet 
+
+Now you need to send the packet to the router , now the MAC address is router (router is not in the same subnet ) now this router can be used as security breach from the same subnet and the data can go through the same one of the host . Router now will look destination address , , router  
+Has another IP address on the other side 
