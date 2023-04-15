@@ -1,0 +1,74 @@
+TCP (transmisstion control protocol)
+
+# Layer 4 protocol
+# ability to address processes in a host using ports 
+# Controls the transmission unlike UDP which is firehose
+# Connection
+# Requires handshake 
+# 20 Bytes headers segment
+# stateful
+
+TCP Use Cases
+# Reliable communication
+# Remote shell
+# Database connections 
+# Web communications
+# Web communications
+# Any bidirectional communication
+
+TCP Connection
+# Connection is a layer 5 (session)
+# Connection is an agreement b/w client and server
+# Must create a connection to send data
+# Connection is identified by 4 properties
+    ## SourceIP-SourcePort
+    ## DestinationIP-DestinationPort
+
+# cant send data outside of a connection
+# Sometimes called socket or file descriptor 
+# Requires a 3way TCP handshake 
+# Segments are sequenced and ordered ( But Ip packets can take any route or path, it can reach out of ordered )
+# Segments are acknowledged 
+# Lost segments are retransmitted 
+(so if any segment are missing in packet it will retransmit)
+power of retransmission is what makes TCP powerful
+
+Multiplexing and Demultiplexing 
+# IP target hosts only 
+# Hosts run many apps each with different requirements
+# Ports now identify the app or processes
+# sender multiplexes all its apps into TCP connections 
+# Receiver demultiplex TCP segments to each app based on connections pairs
+
+
+So when TCP connection or handshake happens , it will be storing file descriptor on both side , so anything else tries to connect it will check whether or not connection is established if not then connection is required , client send SYN along with source address and dest then server will send syn/ack and then finally client sends ACK 
+3 way handshake
+
+
+Sending data 
+# App1 sends data to APPx 
+# APP1 encapsulate the data in a segment and send it 
+# AppX acknowledge the segment 
+# Hint: Can App1 send new segment before ack of old segment arrives 
+
+yes it can but can your server handle all that segment that is called flow control and in middle that you are keep on sending is called as congestion 
+
+Acknowledgement 
+# App1 sends segment 1,2,3 to AppX
+# AppX acknowledge all of them with a single ACK 3
+
+for example client send seq1 , seq2 , seq3 and server can acknowledge all of them by sending ACK3 , if sends ACK2 which means seq1 is received if ACK3 that means seq1 and seq2 is arrived 
+
+LOST Data 
+# for example , lets say source A is sending seq1 , seq2, seq3 and somehow seq3 is lost may be timeout happened or fragmentation is required ICMP messages are sent back and server acknowledges with only ACK2 that means only seq1 and seq2 are received then source A will retransmit and then it will acknowledge with ACK3 that is how TCP guarantees the transmission of segments
+
+closing connection => this make 4 way handshake  
+# App1 wants to close the connection 
+# App1 sends FIN , AppX ACK
+# immediately AppX sends FIN , App1 ACK
+# 4 way handshake
+
+when server sees the final ACK it will destroy the file descriptor on server side , unforutnately , person who send the fin, their file descriptor remain , remains in time wait state , to wait for any segment that was lost and retransmitted to arrive and clean it out in order to avoid to opening another file descriptor
+
+TCP , transmission control protocol ,uses counts of port just like UDP but gives you control flow and give you order of packets  ,gives you guaranteed delivery , you can argue congestion control , 
+so theres file descriptor on both server and the client that maintains the connection, which lives in memory
