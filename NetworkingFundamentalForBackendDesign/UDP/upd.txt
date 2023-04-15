@@ -1,1 +1,70 @@
+UDP(User datagram protocol)
 
+# Layer 4 portal
+# Ability to address processes in a host using posts 
+	It means you can have multiple applicaition running on same host or we send the multiple request to the same IP address , that goes to multiple applications
+# Simple protocol to send and recieve data
+# Prior communication not required
+# Stateless no knowledge is stored on the host 
+# 8 byte header Data gram (IP Packet has 20 byte)
+
+UDP Use cases 
+ # video streaming 
+ # VPN (most VPN use IP in IP) 
+ # DNS 
+ # WebRTC(popular web protocol that uses UDP)
+
+ Multiplexing and Demultiplexing 
+ (the idea is to take multiple input and shove it into one and for demultiplexing take one input and put it into the multiple output)
+ # IP target host only 
+ # Hosts run many apps each with different requirements 
+ # Ports now identify the app or processes
+ # Sender multiplexes all its apps into UDP
+ # Reciever demultiplexes UDP datagrams to each app
+
+apps:
+(app1-port 5555)
+(app2-port 7712)
+(app3-port 2222)
+
+(appx-port 53)
+ we have different apps with different port and you have one IP address , all of these will be shoved into one wire with single IP packet which goes to single address , so we are multiplexing ,multiple input into one , and demultiplexing into actual target application, 
+
+Source and destination port
+# App1 on 10.0.0.1 sends data to AppX on 10.0.0.2
+# Destination PORT 53 
+# Appx responds back to App1
+# We need source Port so we know how to send back data 
+# Source Port = 5555
+
+###User datagram protocol structure 
+
+# UDP header is 8 bytes only (IPv4)
+# Datagram slides into an IP packet as data(layer 4 slides layer 3 now protocol IP header will say UDP)
+# Port are 16 bit (0 to 65535)
+
+UDP has source and destination port , with Length and checksum and data
+
+2 bytes for each port 
+
+Source port , identifies where this applicaiton is coming from or where this process is coming from , its unique each process has unique port lets assume , if we fix the destination port (port 53) assuming IP address is also fixed , and you also fix source IP address, then how many application can send DNS packet to the same destination port which is 53 and from same source , you can only 65535 app or prcoesses can uniquely send more than that it will fail after 65535 request 
+
+Length and checksum 
+length of the data , checksum to check if data is corrupted 
+
+UDP pros
+# simple protocol
+# Header size is small so datagrams are small
+# Uses less bandwidth 
+# Stateless
+# Consumes less memory (no stat stored in the server/client)
+# Low latency - no handshake , order , retransmission or guranteed delivery 
+
+UDP Cons
+# No acknowledgement 
+# No gurantee delivery
+# connection less anyone can send data without prior knowledge
+# No flow control
+# No congestion control
+# No ordered packets
+# Security - can be easily spoofed (server can be flooded with UDP and server has process those UDP because it doesn't maintain state , its connectionless , so you dont know )
