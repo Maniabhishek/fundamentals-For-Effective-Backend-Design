@@ -1,1 +1,48 @@
+FLOW CONTROL (How much the receiver can handle)
 
+# A want to send 10 segments to Borochov
+# A sends segment 1 to B
+# B acknowledges segment 1 
+# A sends segment 2 to B
+# B acknowledges segment 2 
+ this means we are doing it one by one 
+  
+  this is very slow 
+
+Flow control 
+
+# A can send multiple segments and B can acknowledge all in 1 ACK 
+# The question is ... how much A can send 
+# this is flow control 
+
+we can send seg1 seg2 seg3 alomost prallel , then B acknowledges to A
+B was able to handle all three 
+
+
+# when TCP segments arrive they are put in receiver's buffer 
+# and this buffer has its own size if this is full and sender keeps sending the data then all other segments will be droped 
+# so the solution is , let the sender know how much you can handle hence we need to know the window size 
+
+# Flow Control window size (receiver window)
+
+the receiver send back the window size (RWND)
+basically both the receiver and send sends it 
+
+Now , the window size can vary everytime , why because there is not only one client , there can be multiple client whom server will be handling thus it keeps varying , and client are always notified with the window size 
+
+SLIIDNG WINDOW
+# Cant keep waiting for receiver to acknowledge all segments 
+# Whatever gets acknowledge moves
+# we slide window 
+# sneder maintains the sliding window for the receiver 
+
+WINDOW SCALING
+#64 Kb is too small (16 bits )
+# we cant increase the bits on the segment
+# meet window scaling factor 
+so 64 KB was very small , this problem was soved very elegantly
+ they introduce a scaling factor , which is just basically a power factor .
+ there is an option in TCP segments that you can enable and this is called the window scaling 
+And this is negotiated during the exchange with server and server will say its scaling is 14 so what you do is basically multiply it to (2^16 - 1)* 2^14
+and this is huge more than enough 1 gb
+# only exchanged only once during the handshake
