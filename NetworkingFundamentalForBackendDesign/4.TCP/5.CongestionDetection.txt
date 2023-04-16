@@ -1,1 +1,21 @@
+Congestion Detection 
+# when you detect a dropped packet , there is a transmission timer , you send it and if that timer ran out before we got an acknowledgment , that's a dropped packet 
+# And when that packet is lost we assume there is a congestion 
+# so router in the middle , their buffer sizes have exceeded their limit and the packet was dropped 
 
+# so whenever we hit the threshold for the congestion window , we flip to the congestion avoidance , we reduce that threshold
+
+# we make it even less ,by whatever the number of packets that are unacknowledged that we send and we lost and we didn't get acknowledgement.
+
+However, a number of bytes is called the flight size divided by two.
+# Congestion divided by two , is not entirely correct becasue the congestion window is actually greater than whatever is the flight size because you might have one segment in flight and that was detected a congestion, right. So you divide the flight size of that segment by two, not the whole congestion window. because you're going to get a larger value in this case and you can get into errors and bugs 
+
+# After reducing the slow start threshold , we also reset the value back 1MSS , and we restart because CWND is less than threshold , this way we reach threshold
+
+# The moment we get timeouts , dup ACKs or packet drops 
+# The slow start threshold reduced to the half of whatever unacknowledged data is sent (reoughly CWND/2 if all CWND worth of data is unacknowledged )
+# The CWND is reset to 1 and we start over
+# Min slow start threshold is 2 * MSS 
+
+SO we are reducing then isn't it eventually going to hit zero 
+No there is limit minimum slow start threshold is actually two times the maximum segment size
