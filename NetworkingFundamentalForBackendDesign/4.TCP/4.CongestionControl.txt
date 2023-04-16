@@ -1,0 +1,46 @@
+CONGESTION CONTROL (How much the network can handle)
+
+# the receiver might handle the load but the middle boxes might not 
+# the routers in the middle have limit 
+# We dont want to congest the network with data 
+# We need to avoid congestion 
+# A new window: Congestion window (CWND)
+
+this is property for sender because sender is responsible for congestion.
+
+
+ TCP Congestion Alogrithms 
+ # TCP slow start (increases exponentially )
+   > Start slow goes fast!
+   > CWND + 1 MSS after each ACK 
+# Congestion Avoidance 
+   > Once slow start reaches its threshold this kicks in 
+   > CWND + 1 MSS after complete RTT (round trip time)
+# CWND must not exceeds RWND 
+
+SLOW START 
+# CWND start with 1 MSS (or more)
+# Send 1 segment and waits for ACK
+# with each ACK received, CWND is incremented by 1 MSS
+# Until we reach slow start threshhold we switch to congestion avoidance alogrithm
+
+example: 
+A sends 1 segment to B then B send ACK , Now A will increase CWND by 1 now A will send 2 segments now B will send ACK for these 2 segments ACK2 , ACK3 although , it will send only one ACK3 (which means anything above ACK3 is also received) thus CWND will be increased by 1 and another 1 for another ACK ie., ACK2 now A will send 4 segments ,
+so it is increasing like 1 then 2 then 4 ....it increases exponentially , once it reaches slow start threshold we switch to the congestion avoidance alogrithm , in case of avoidance alogrithm we just increase CWND by 1 in one round trip which means when B sends ACK let's say for 7 segments then it will increase by 1 , so in this algorithm it almost becomes linear,
+even if you receive one acknowledgement for the 8th one , that's one round trip 
+
+CONGESTION AVOIDANCE
+# Send CWND worth of segments and waits for ACK
+# Only when all segments are ACKed add up to 1 MSS to CWND
+# Precisely CWND = CWND + MSS*/CWND(its not exactly added by but roughly , this , less than 1)
+
+Congestion Notification
+# We dont want router dropping packets 
+# can Router let us know when congestion hit 
+# meet ECN (Explicit congestion Notification)
+# Routers and middle boxes can tag IP packets with ECN
+# The receiver will copy this bit back to the sender
+# ECN is IP header bit
+# So routers don't drop packets just le me know you are reaching your limit
+
+Sender can send segments up to CWND or RWND without ACK  (RWND Without ACK because you dont want to wait for the ACK each time , it will make it slow)
