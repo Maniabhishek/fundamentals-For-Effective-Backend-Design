@@ -1,0 +1,22 @@
+TCP Segment
+ refer this for more clarity (https://en.wikipedia.org/wiki/Transmission_Control_Protocol#:~:text=A%20TCP%20segment%20consists%20of,data%20carried%20for%20the%20application.)
+
+ # TCP segment header is 20 bytes and can go upto 60 bytes
+ # TCP segments slides into an IP packet as data
+ # Port are 16 bit (0 to 65535) (source 16 and destination 16)
+ # Sequences , acknowledge , flow control and more 
+
+IN TCP segment source and destination port gets 16 bits each 
+
+Sequence Number get 24 bits which means around 4 billion so , you can sending the segments but at the end it has limit 
+
+Window size : which is 16 bit around 65kilobytes that means server cannot handle segements after this , thats too low right ,
+but its size can be increased
+
+Maximum Segment size
+# Segment size depends the MTU of the network
+# Usually 512 bytes can go up to 1460
+# Default MTU in the internet is 1500 (results in MSS 1460)
+# Jumbo frames MTU goes to 9000 or more 
+# MSS can be larger in jumbo frames cases
+
