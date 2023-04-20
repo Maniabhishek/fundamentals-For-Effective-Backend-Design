@@ -9,7 +9,7 @@ IP address :
 Network Vs Host 
 => a.b.c.d/x (a.b.c.d are integers) x is the network bits and remains are host , 
 => 192.168.223.0/12
-=> the first 24 bits (3 bytes ) are network the rest 8 are for host 
+=> the first 24 bits (3 bytes ) are network the rest 8 bits are for host 
 => this means we can have 2^24  (16777216) networks and each network has 2^8 (255) hosts
 => Also called a subnet
 
