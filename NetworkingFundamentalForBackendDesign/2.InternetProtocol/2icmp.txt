@@ -17,12 +17,12 @@ ICMP(Internet control message protocol)
 For example sometime you find out that your IP packet is dropped because it had ICMP because firewall has blocked ICMP
 
 Traceroute 
-# can you identify the entire path your IP packet takes 
+# you can identify the entire path your IP packet takes 
 # clever use of TTL
 # Increment TTL slowly and you will get the router IP address for each hop
 # Doesn’t always work as path changes and ICMP might be blocked 
 
-For example you can check “traceroute google.come”
+For example you can check “traceroute google.com”
 
 It is IP level protocol , that is used to send information back and forth , but some firewall blocks it ,
 if it block it means you can’t send the critical messages , you can get into wierd situation , ping , traceroute 
