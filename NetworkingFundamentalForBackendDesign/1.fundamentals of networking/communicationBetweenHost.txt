@@ -5,14 +5,16 @@ Communication between Hosts
 => Each host network card has a unique Media Access Control address
 
 => A send a message to B specifying the MAC address 
-=> for example there are 4 host connected to the network , each one of them will get the message but only B will accept it , all the host will go until layer 2 data link layer checks the MAC address and dedicated host will accept it will proceed with further layers
+=> for example there are 4 host connected to the network , each one of them will get the message but only B will accept it ,
+all the host will go until layer 2 data link layer checks the MAC address and dedicated host will accept it will proceed with further layers
 
 => Imagine millions of machines 
 => We need a way to eliminate the need to send it to everyone 
 => The address need to get better 
 => We need to route , meed the  IP address
 
-For example one would why do you need ip address MAC address is unique just send me directly , why to send to anyone else , but that is not possible , it would be like scanning in way too many devices to find out the correct one 
+For example one would say ,why do you need ip address MAC address is unique just send me directly , why to send to anyone else , 
+but that is not possible , it would be like scanning in way too many devices to find out the correct one 
 
 => The IP address is build in two parts (4 bytes)
 => One part to identify the network , the other is the host 
