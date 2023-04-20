@@ -76,7 +76,7 @@ For example I have to send the HTTP POST request but I need to establish the new
 Let’s see
 
 => Application will send the post request , Presentation does the JSON stuff , now goes to session , 
-  it doesn’t have the n it will send syn ack go all the way to receiver session to establish the 
+  it doesn’t have the connection established it will send syn ack go all the way to receiver session to establish the 
   connection and again send the en ack , now full connection is send , now post request resumes (session to session can be on packet )
 
 
@@ -92,14 +92,14 @@ Lets see about Layer 4 Proxy , firewall , Layer 7  load balancer /CDN
 => Backend engineer mostly need to worry about application layer and transport layer 
 
 Proxy is layer 4 
-it blocks certain application from sending data or blocak certain unwanted packet to come through network for this to be done it need to look IP address 
+it blocks certain application from sending data or block certain unwanted packet to come through network for this to be done it need to look IP address 
  (network layer ) needs to look at PORT (transport layer) they are called as transparent firewall or transparent proxies .
  these are really transparent everything upto transport layer is visible to everyone , everyone can read IP address port , it is never encrypted , you 
  need IP address to route data and port you need it public these are public so thats why transparent firewall 
  
  ISP can rewrite the port 
  
- In Loan balancing instead of port 8080 dont go there it will rewrite in transport payer , and can send it to some other port you can rewrite the packet 
+ In Load balancing instead of port 8080 dont go there it will rewrite in transport payer , and can send it to some other port you can rewrite the packet 
  You can also think that your ISP can do that too can send data anywhere they want to, because ISP is first place packet goes to thats why lot of people
  uses VPN , VPN takes the IP packet and puts in to another IP packet VPN is layer 3 protocol some is 2 
 
