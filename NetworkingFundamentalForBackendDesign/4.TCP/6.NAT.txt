@@ -1,1 +1,68 @@
+NAT (Network Address Translation)
 
+As IPv4 has limit of 4 billion addresses , everyone is connected to the interne ,the problem 
+remains how can we get more than 4 billion devices on the internet, one solution is IPv6 , 
+with a new protocol we need to update all the routers and it's a huge job
+
+How the WAN(wide area network) sees your internal devices
+
+NAT 
+# IPv4 is limited only 4 billion
+# Private vs Public IP address 
+# Eg., 192.168.x.x, 10.0.0.x is private not routable in the internet(any router see this 
+address will drops the packet , it never routes it bnecause these are considered private and 
+you assign it for private users only , they are used only in internal routers )
+# Internal hosts can be assigned private addresses
+# Only your router need public IP addresses
+# Router need to translate requests (the router can translate requests to and from it back to 
+the device that originated through the magic of NAT)
+
+
+Lets see with an example ,
+Device A 192.168.1.2 wants to send to B 192.168.1.4 , both are connected to the same network 
+192.168.1.1 , 
+
+Get Request =>>> 8992|192.168.1.2|Get/|192.168.1.4|8080
+Response, you get the pakcet ,literally flip everything 8080|192.168.1.4|JSON|192.168.1.2|8992
+
+#Lets change the scenario 
+Device A 192.168.1.2 wants to send to B 55.11.22.33 , B is not in the same network 
+we have router with 192.168.1.1 (private) and 44.11.5.17 (public IP address)
+
+#after applying the subnet masking it finds out target is not in the same subnet , it will 
+send to the router , frame goes to the router but destination IP doesn't change , router will 
+not send with the same source IP as it is private because if it sends it will be dropped 
+before it reaches the server , so router is going to rewrite the IP packet with it public 44.
+11.5.17 , now one would ask how will it reach to the correct source as correct source was 192.
+168.1.2 , well , NAT is statefull , it remembers the source IP address , creates mapping for 
+it so once the reqeust is made the IP packet will look like :
+7777|44.11.5.17 |Get/|55.11.22.33|8080, , server receives it , processes it , written for 
+JSON doc, then the ip packet will be flipped in the response 8080|55.11.22.33 |JSON|44.11.5.
+17|7777 , router receives the packet it checks if this is for router itself , almost never 
+the only time router receives an actual packet that is actually for that router is when admin 
+want to manager the router , something like if you want to change the password or something 
+related to the WiFi, otherwise router is never the final destination , router check the NAT 
+table , and finds out to whom this response is going , router here in NAT mode it actually 
+plays both role layer 3 and layer 4 , NAT will rewrite the Ip and port and that's how it will 
+reach to the exact client who made the request 
+
+
+# what is the maximum records in the NAT table when machine A wnat to send request B , (fixed 
+
+source and destination )
+if we fix the sosurce IP address and destination Ip address , then in this case 
+only the source port is variable , then in that case you can only make 65000 connections 
+(port is 16 bit), becasue 
+only that much NAT can do mapping , this time other users will also be starved 
+
+NAT Application
+# Private to Public Translation (so we don't run out IPv4)
+# Port forwarding 
+    ## Add a NAT entry in the router to forward packets to 80 to a machine in your LAN 
+    ## No need to have root access to listen on port 80 on your device 
+    ## expose your local we server publically 
+# Layer 4 load balancer 
+    ## HAProxy NAT mode- your load balancer is your gateway 
+    ## client send a reqeust to a bogus service IP
+    ## Router intercepts that packet and replaces the service IP with a destination server 
+    ## Layer 4 reverse proxying 
