@@ -1,0 +1,28 @@
+TCP Pros and Cons
+
+Pros 
+# Guarantee delivery 
+# No one can send data without prior knowledge
+# Flow control and congestion control
+# Ordered Packets no corruption or app level work 
+# Secure and can't be easily spoofed 
+
+Cons
+# Larger header overhead compared to UDP
+# More bandwidth
+# Stateful -  consumes memory on server and client 
+# Considered high latency for certain workloads (slow start / congestion / acks)
+# Does too much at a low level (QUIC main reason was ordering , TCP Head of line blocking)
+  ## Single connection to send multiple streams of data (HTTP requests)
+  ## Stream 1 has nothing to do with stream 2
+  ## Both stream and stream 2 packets must arrive 
+
+  ## order matters in case of TCP , so in a single connection if multiple get request is being made then in that case what if all the segments doesn't reach in order so this is the case where OUIC helps 
+
+  usually it doesn't happen that under one connection we have multiple request 
+
+  but there can be scenarios when backend developer makes this mistake  , back in engineering community use a single TCP connection between the backend and the db , they would expose a web tier , to receive a db request , they multiplex , all these input ito one single TCP connection  , this is a bad idea, Because if you sending multiple query SQL queries in a single TCP connection, these queries will be translated into segments , segment 1 will be query 1 , segment 2 will be query 2, segment 3 will be query 3, if they arrive in order then they will be delivered in order , but what if query 3rd gets executed first ,the socket will write the sql query 3 result , NO db will gurantee order if it gurantees then fine , 
+
+
+# TCP meltdown 
+  ## Not a good candidate for VPN 
