@@ -69,4 +69,6 @@ with time wait , one trick is if you own the frontend and backend then you can d
 protocol such that you send a request , a normal request that is just normal data that tells 
 the client to close , so you send a request the client will initiate for you and as a result 
 you will yourself up and you close, but the time wait will be on the client side , and you 
-dont really worry much about the client side as there can be many client but only one server 
+dont really worry much about the client side as there can be many client but only one server
+
+https://www.ibm.com/docs/en/zos/2.1.0?topic=SSLTBW_2.1.0/com.ibm.zos.v2r1.halu101/constatus.html
