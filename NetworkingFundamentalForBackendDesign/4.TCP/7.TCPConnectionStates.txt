@@ -1,1 +1,72 @@
+TCP Connection States
 
+# TCP is stateful protocol
+# Both client and server need to maintain all sorts of state
+# Window sizes, sequences and the state of the Connection
+# The Connection goes through many States
+
+# TCP state transition description
+
+LISTEN
+Waiting for a connection request from a remote TCP application. This is the state in which 
+you can find the listening socket of a local TCP server.
+
+SYN-SENT
+Waiting for an acknowledgment from the remote endpoint after having sent a connection 
+request. Results after step 1 of the three-way TCP handshake.
+
+SYN-RECEIVED
+This endpoint has received a connection request and sent an acknowledgment. This endpoint is 
+waiting for final acknowledgment that the other endpoint did receive this endpoint's 
+acknowledgment of the original connection request. Results after step 2 of the three-way TCP 
+handshake.
+
+ESTABLISHED
+Represents a fully established connection; this is the normal state for the data transfer 
+phase of the connection.
+
+FIN-WAIT-1
+Waiting for an acknowledgment of the connection termination request or for a simultaneous 
+connection termination request from the remote TCP. This state is normally of short duration.
+
+FIN-WAIT-2
+Waiting for a connection termination request from the remote TCP after this endpoint has sent 
+its connection termination request. This state is normally of short duration, but if the 
+remote socket endpoint does not close its socket shortly after it has received information 
+that this socket endpoint closed the connection, then it might last for some time. Excessive 
+FIN-WAIT-2 states can indicate an error in the coding of the remote application.
+
+CLOSE-WAIT
+This endpoint has received a close request from the remote endpoint and this TCP is now 
+waiting for a connection termination request from the local application.
+
+CLOSING
+Waiting for a connection termination request acknowledgment from the remote TCP. This state 
+is entered when this endpoint receives a close request from the local application, sends a 
+termination request to the remote endpoint, and receives a termination request before it 
+receives the acknowledgment from the remote endpoint.
+
+LAST-ACK	
+Waiting for an acknowledgment of the connection termination request previously sent to the 
+remote TCP. This state is entered when this endpoint received a termination request before it 
+sent its termination request.
+
+TIME-WAIT	
+Waiting for enough time to pass to be sure the remote TCP received the acknowledgment of its 
+connection termination request.
+
+CLOSED	
+Represents no connection state at all.
+
+
+## one important point whoever requested the fin will end up in this state.
+So if the client requests fin or the server request the fin, they will end up into the time 
+wait state
+
+SO if you have something like nginx and it started the fin then it will end up in time wait 
+state as  a backend developer how do we avoid it , becasue we dont want server to be flooded 
+with time wait , one trick is if you own the frontend and backend then you can design a 
+protocol such that you send a request , a normal request that is just normal data that tells 
+the client to close , so you send a request the client will initiate for you and as a result 
+you will yourself up and you close, but the time wait will be on the client side , and you 
+dont really worry much about the client side as there can be many client but only one server 
