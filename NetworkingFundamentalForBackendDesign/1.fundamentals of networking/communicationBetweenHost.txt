@@ -11,7 +11,7 @@ all the host will go until layer 2 data link layer checks the MAC address and de
 => Imagine millions of machines 
 => We need a way to eliminate the need to send it to everyone 
 => The address need to get better 
-=> We need to route , meed the  IP address
+=> We need to route , need the  IP address
 
 For example one would say ,why do you need ip address MAC address is unique just send me directly , why to send to anyone else , 
 but that is not possible , it would be like scanning in way too many devices to find out the correct one 
