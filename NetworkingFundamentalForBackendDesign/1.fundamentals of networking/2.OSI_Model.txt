@@ -23,7 +23,7 @@ Layer 1 : Physical - Electric signals , fibre or radio waves
 => Http ,  http/2 , http/3 built on top of tcp quick on UDP
 
 =>  Layer 3 Network - IP 
-Here we don’t have visibility of port on layer 4 we kbnnow the port 8080 whatever
+Here we don’t have visibility of port on layer 4 we know the port 8080 whatever
 
 => Data link layer : we are dealing with the physical medium , for example if a wifi has a xyz Mac address and we want to send a frames to this address , 
   we don’t know about the IP address here 
