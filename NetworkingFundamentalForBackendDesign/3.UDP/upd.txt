@@ -1,7 +1,7 @@
 UDP(User datagram protocol)
 
 # Layer 4 portal
-# Ability to address processes in a host using posts 
+# Ability to address processes in a host using ports 
 	It means you can have multiple applicaition running on same host or we send the multiple request to the same IP address , that goes to multiple applications
 # Simple protocol to send and recieve data
 # Prior communication not required
