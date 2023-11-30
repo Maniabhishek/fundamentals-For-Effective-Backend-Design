@@ -1,6 +1,6 @@
 IP Packet 
 
-We can think of it as bunch data , with source and destination address
+We can think of it as bunch of data , with source and destination address
 
 # The IP Packet has headers and data sections 
 # IP Packet header is 20 bytes (can go up to 60 bytes if options are enabled )
