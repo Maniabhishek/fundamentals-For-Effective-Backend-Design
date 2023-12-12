@@ -4,17 +4,19 @@ UDP(User datagram protocol)
 # Ability to address processes in a host using ports 
 	It means you can have multiple applicaition running on same host or we send the multiple request to the same IP address , that goes to multiple applications
 # Simple protocol to send and recieve data
-# Prior communication not required
+# Prior communication not required (there is nothing stored in the server )
 # Stateless no knowledge is stored on the host 
-# 8 byte header Data gram (IP Packet has 20 byte)
+# 8 byte header Data gramn (small header ) (comparing with IP Packet it has 20 byte)
+
+# In Udp you don't actually care if some of the frame is dropped , it doesn't care about consistency
 
 UDP Use cases 
  # video streaming 
- # VPN (most VPN use IP in IP) 
+ # VPN (most VPN use IP in IP , so your IP packet that gets sent regardless the naked IP packet, the VPN will put in another IP packet and encrypts that IP will be destined to the VPN server, ISP will see a flood of IP packets going to one server, once it reached to that VPN , it will unpack that IP packet, they will find another IP packet inside it that goes to actual correct destination, that's why VPN know where you are going but the ISP doesn't) 
  # DNS 
  # WebRTC(popular web protocol that uses UDP)
 
- Multiplexing and Demultiplexing 
+ Multiplexing(multiple input is shoved into one ) and Demultiplexing (vice versa of multiplexing)
  (the idea is to take multiple input and shove it into one and for demultiplexing take one input and put it into the multiple output)
  # IP target host only 
  # Hosts run many apps each with different requirements 
@@ -22,13 +24,19 @@ UDP Use cases
  # Sender multiplexes all its apps into UDP
  # Reciever demultiplexes UDP datagrams to each app
 
-apps:
+apps host A:
 (app1-port 5555)
 (app2-port 7712)
 (app3-port 2222)
 
+apps Host B:
 (appx-port 53)
- we have different apps with different port and you have one IP address , all of these will be shoved into one wire with single IP packet which goes to single address , so we are multiplexing ,multiple input into one , and demultiplexing into actual target application, 
+(appy-port 68)
+(appz-port 6978)
+# we have different apps with different port and you have one IP address , all of these will be shoved into one wire with single IP packet which goes to single address , so we are multiplexing ,multiple input into one , and demultiplexing into actual target application , all the application will have port ,
+so while communicating 
+# so app1 can communicate to appx , as all the datagrams are uniquely identified.
+
 
 Source and destination port
 # App1 on 10.0.0.1 sends data to AppX on 10.0.0.2
@@ -40,7 +48,7 @@ Source and destination port
 ###User datagram protocol structure 
 
 # UDP header is 8 bytes only (IPv4)
-# Datagram slides into an IP packet as data(layer 4 slides layer 3 now protocol IP header will say UDP)
+# Datagram slides into an IP packet as data(layer 4 slides layer 3 now protocol IP header will say UDP in this case)
 # Port are 16 bit (0 to 65535)
 
 UDP has source and destination port , with Length and checksum and data
