@@ -10,7 +10,7 @@ Why DNS
 > - Additional layer of abstraction is good 
 > - IP can change while the domain remain
 > - We can serve the closest IP to a client reqeusting the same domain 
-> - Load Balancing 
+> - Load Balancing (client side load balancing with multiple IP address on a single domain nam)
 
 www.abc.com
 
@@ -26,8 +26,8 @@ com => top level domain
 > - Many records (MX, TXT, A, CNAME)
 
 How DNS Works 
-# DNS resolver - frontend and cache 
-# ROOT server - Hosts IPs of the ANS (this will not know but it will redirect to the one who will know is TLD )
-# TOP level domain server - Hosts IPs of the ANS (after root server it will ask the TLD of the .com or .org whatever , then get me Authoritative name server that might have the answer, this is where you registered your domain)
-# Authoritative Name server -  hosts the IP of the target server 
+> -  DNS resolver - frontend and cache 
+> - ROOT server - Hosts IPs of the ANS (this will not know but it will redirect to the one who will know is TLD )
+> - TOP level domain server - Hosts IPs of the ANS (after root server it will ask the TLD of the .com or .org whatever , then get me Authoritative name server that might have the answer, this is where you registered your domain)
+> - Authoritative Name server -  hosts the IP of the target server 
 
