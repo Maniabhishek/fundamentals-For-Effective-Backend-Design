@@ -27,7 +27,7 @@ com => top level domain
 
 How DNS Works 
 > -  DNS resolver - frontend and cache 
-> - ROOT server - Hosts IPs of the ANS (this will not know but it will redirect to the one who will know is TLD )
+> - ROOT server - Hosts IPs of the TLDs(top level domain servers) (this will not know but it will redirect to the one who will know is TLD )
 > - TOP level domain server - Hosts IPs of the ANS (after root server it will ask the TLD of the .com or .org whatever , then get me Authoritative name server that might have the answer, this is where you registered your domain)
 > - Authoritative Name server -  hosts the IP of the target server 
 
