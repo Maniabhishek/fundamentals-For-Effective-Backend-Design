@@ -43,6 +43,6 @@ How DNS Works (there are four servers invloved in loading a webpage)
 > - Lastly, the recursive resolver sends a query to the domain’s nameserver.
 > - The IP address for example.com is then returned to the resolver from the nameserver.
 > - The DNS resolver then responds to the web browser with the IP address of the domain requested initially.
-Once the 8 steps of the DNS lookup have returned the IP address for example.com, the browser is able to make the request for the web page:
+- Once the 8 steps of the DNS lookup have returned the IP address for example.com, the browser is able to make the request for the web page:
 > - The browser makes a HTTP request to the IP address.
 > - The server at that IP returns the webpage to be rendered in the browser (step 10).
