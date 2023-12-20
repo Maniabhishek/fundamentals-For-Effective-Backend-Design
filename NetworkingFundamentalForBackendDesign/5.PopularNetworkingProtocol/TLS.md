@@ -37,4 +37,6 @@
 - The TLS handshake establishes a cipher suite for each communication session
 - The cipher suite is a set of algorithm, which specifies the details such as which shared encryption key or session keys, will be used for that particular session.
 - TLS is able to set the matching session keys over an unencrypted channel thanks to a technology known as public key cryptography.
-- The handshake also handles authentication, which usually consists of the server proving its identity to the client. This is done using ***public keys***. 
+- The handshake also handles authentication, which usually consists of the server proving its identity to the client. This is done using **public keys**.
+- Public keys are encryption keys that use one-way encryption, meaning that anyone with the public key can unscramble the data encrypted with the server's private key to ensure its authenticity, but only the original sender can encrypt data with the private key. The server's public key is part of its TLS certificate.
+- Once data is encrypted and authenticated, it is then signed with a message authentication code **(MAC)**. The recipient can then verify the MAC to ensure the integrity of the data.
