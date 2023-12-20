@@ -31,3 +31,5 @@
 - when a user navigates to a website that uses TLS, the TLS handshake begins between the user's device (also known as the client device) and the web server
 - During the TLS handshake the user's device and webserver:
   - Specify which version of TLS (TLS 1.0, 1.2, 1.3, etc.) they will use
+  - Decide on which cipher suites they will use
+  - Authenticate the identity of the server using the server's TLS certificate
