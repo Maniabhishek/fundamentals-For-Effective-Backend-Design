@@ -33,3 +33,8 @@
   - Specify which version of TLS (TLS 1.0, 1.2, 1.3, etc.) they will use
   - Decide on which cipher suites they will use
   - Authenticate the identity of the server using the server's TLS certificate
+  - Generate session keys for encrypting messages between them after the handshake is complete
+- The TLS handshake establishes a cipher suite for each communication session
+- The cipher suite is a set of algorithm, which specifies the details such as which shared encryption key or session keys, will be used for that particular session.
+- TLS is able to set the matching session keys over an unencrypted channel thanks to a technology known as public key cryptography.
+- The handshake also handles authentication, which usually consists of the server proving its identity to the client. This is done using ***public keys***. 
