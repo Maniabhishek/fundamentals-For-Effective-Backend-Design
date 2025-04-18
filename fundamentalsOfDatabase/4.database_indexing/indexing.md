@@ -37,3 +37,6 @@ docker exec -it pg1 psql -U postgres
   - do the same query again ```explain analyze select name from employees where name='abc'``` this will be faster
 
 <img width=800 hieght=300 src="https://github.com/user-attachments/assets/b85cf352-0288-410d-9b0d-0167112bb5dc">
+
+- let's check the width when we use explain to explain any query
+  - this width , The larger this number, the larger the network you're going to take, the higher the TCP packets 
