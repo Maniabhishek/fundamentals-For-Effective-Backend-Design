@@ -39,4 +39,5 @@ docker exec -it pg1 psql -U postgres
 <img width=800 hieght=300 src="https://github.com/user-attachments/assets/b85cf352-0288-410d-9b0d-0167112bb5dc">
 
 - let's check the width when we use explain to explain any query
-  - this width , The larger this number, the larger the network you're going to take, the higher the TCP packets 
+  - this width , The larger this number, the larger the network you're going to take, the higher the TCP packets
+  - so if any request has query ```select * from employees``` this will have width higher as we returning the whole table image there are billion table
