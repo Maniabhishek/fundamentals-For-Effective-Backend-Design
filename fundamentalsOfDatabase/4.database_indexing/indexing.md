@@ -36,4 +36,4 @@ docker exec -it pg1 psql -U postgres
 ``` create index employees_name on employees(name) ```
   - do the same query again ```explain analyze select name from employees where name='abc'``` this will be faster
 
-<img width=500 src="https://github.com/user-attachments/assets/b85cf352-0288-410d-9b0d-0167112bb5dc">
+<img width=800 hieght=300 src="https://github.com/user-attachments/assets/b85cf352-0288-410d-9b0d-0167112bb5dc">
