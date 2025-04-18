@@ -31,12 +31,13 @@
   - Now we're going to do a bitmap scan. So using the number of pages that I know exactly to fetch, I need to jump to the heap once and fetch all those pages. Okay. And when I fetch all those pages, guess what? Every page is going to have one or more row, right? That's how Postgres stores things.
   - Some of those rows will not satisfy the G greater than 995 criteria. So the the Postgres does a recheck on the condition only to filter out the rows that has been filtered and drops the rows that have been filtered. In this case, we were lucky that the exact number of rows actually fit exactly in the in the in the pages.
 
+- let's add age column in the table ```alter table employees add column age int``` and adding random ages (20 to 90) ```UPDATE employees SET age = floor(random() * (90 - 20 + 1) + 20);```
 
 #### Beauty of bitmap scan 
 - So the beauty of the bitmap index scan is you can scan multiple indexes or indices, can scan multiple indexes, build those bitmaps, add them together and then get one beautiful bitmap and then jump to the heap.
 
 - let's take an example ```select name from employees where age > 30 and id < 10000```
-  - ID has an index and G has an index.
+  - ID has an index and age has an index.
   - it first did bitmap index scan on age and another bitmap scan on id
   - It will do an index scan, a bitmap index scan on age and calculated that beautiful bitmap that we talked about. And then another bitmap scan on employees_primary key, which is the ID field. Now I have two bitmap what it did. It just anded them.
   - By ending them, any page that exists in one and doesn't exist in the other. don't have to visit it because 100% that row is not going to satisfy my criteria.
