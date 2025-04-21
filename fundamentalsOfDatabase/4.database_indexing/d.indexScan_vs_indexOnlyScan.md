@@ -10,4 +10,9 @@
 <img width=800  height=300 src="https://github.com/user-attachments/assets/789f1fa2-27ae-4151-9f3c-18cbfba40981">
 
 - Index scan are great but index only scans are even better and powerful
-- how can we make index only scan more useful 
+- how can we make index only scan more useful
+- lets say using this id1 we need to fetch name it is queit more useful then in that case we can drop the id1_index and create another ny including firstname with id1_index command to do so:
+   - ```create index id1_index on students(id1) include (firstname)```
+- now run ```explain analyze select firstname from students where id1=35446;```
+<img width=800  height=300 src="https://github.com/user-attachments/assets/b35c209d-d0ce-43cd-b180-5f35a47c763e">
+
