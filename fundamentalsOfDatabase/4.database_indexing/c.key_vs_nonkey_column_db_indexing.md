@@ -24,5 +24,6 @@ podman exec -it pg1 psql -U postgres -d mydb -f /init.sql
   -  let's do indexing ```drop index g_index;``` and add new indexing by including id ```create index g_index on students(g) include (id);```
   -  That's where you as a backend engineer, you really need to think like what columns are you selecting? And based on those columns you create your indexes effectively.
   -  what will happen if i execute my query now ```explain analyze select id, g from students where g> 8 and g<90 order g desc```
-  -  it did index only scan after the indexing where we had included id , because of that heap fetches is 0, 
+  -  it did index only scan after the indexing where we had included id , because of that heap fetches is 0, if we see heap fetch more than 0 that means it had to go to heap or table to search the required elements
 <img width=800 height=300 src="https://github.com/user-attachments/assets/c2e677ca-8ca5-4109-9a49-d93eabe34cdf">
+  - whenever we see some dead tables or dead rows its time to run ```vacuum verbose table_name``` This will tell us like if there's anything wrong, if you got any errors here and you have to do verbose, it will tell you that, oh, by the way, there is some bad things I have to remove all these dead tables, dead rows.
