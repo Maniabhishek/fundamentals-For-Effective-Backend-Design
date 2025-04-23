@@ -1,1 +1,4 @@
-
+> let's say we have a server , and user is requesting some data from server , now we have to implement a logic in server to check whether a user with given name is present in db or not , we always have to go to db and query it , and this is going to be time consuming
+> - what if we store the whole db in REDIS , then checking if user exists will be faster as we are storing it in memory , but using this we are copying data and unnecessarily duplicating
+> - there are something called bloom filters , we will have array bits with 64 bits whenever user request usename let's say john it db will hash it (john)%64 = 62 and it will check 62nd position if it 0 or 1 if 0 then it is guranteed that there is no user and we dont need to hit the query if there is 1 then there are chance that user can be found , because there can collision as well hence we need to go to db to confirm if user is there in db or not
+> - how are bloom filters made as shown in image below , when user tries to insert a user , it will hash the name (john)%64 and save that in bit array everytime we insert , this way bloom filter is created
