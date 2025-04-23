@@ -3,4 +3,4 @@
 - on inserting another row with random value in column now when database update the indexing it is going to find the place where it will go there can be situation of page splitting which is really bad and can take so much of time while inserting
 
 
-![image](https://github.com/user-attachments/assets/06619b69-4f02-4670-9de5-3953dd0ee513)
+<img width=400 height=500 src="https://github.com/user-attachments/assets/06619b69-4f02-4670-9de5-3953dd0ee513">
