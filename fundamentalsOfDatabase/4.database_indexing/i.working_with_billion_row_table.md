@@ -8,3 +8,5 @@
 > Splits entire datasets across multiple physical databases or servers.
 >- 📌 Each shard contains a portion of the data — typically based on a shard key like user_id % 4.
 >- 📌 Often done at the application level or with tools like Citus, MongoDB, CockroachDB, or Vitess.
+
+- and in the end we should never let row count reach billion at the first place , we should always do planning before in order to keep the performance up
