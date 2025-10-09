@@ -1,0 +1,19 @@
+### Lets discuss about how we will store the images
+- well there are couple of way we store the images, first is BLOB (binary large object) or as file
+- to decide between these lets see what are the benefits we get
+- to store it as a blob we are going to be storing it in DBs
+- now what benefits does the dbs give us
+   - Mutability (changing the data in a row)
+   - Transactions (ACID)
+   - Indexes (search)
+   - Access control
+- do we need any of these capability for images , mutability are you going to be updating or changing the text of the binaries
+- trasactions properties are also not required
+- Indexes we are never going to be searching based on image text
+- access control will be same as implementing in both
+- if we save images as file what are the benefits we will get
+    -  it can be cheaper
+    -  it will be faster
+    -  CDNs
+- so this concludes we will be storing the images in distributed file systems
+- so in our db we will create a table with column [ProfileId, ImageId, FileUrl]
