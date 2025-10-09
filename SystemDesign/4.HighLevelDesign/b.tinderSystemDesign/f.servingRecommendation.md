@@ -8,5 +8,6 @@
 -  why are we talking about sharding, well we need to shard the data based on location we are going to be showing the users the relavant data the users in their locations so what our recommendation engine will do get the data based on users gender preference , age preference and location as well create the data table with columns [userid, locations]
 
 
-![image](https://github.com/user-attachments/assets/01199f29-da3e-4ed2-bc20-d0df0a59da7f)
+<img width=600 height=800 src="https://github.com/user-attachments/assets/01199f29-da3e-4ed2-bc20-d0df0a59da7f">
 
+<img width="1893" height="748" alt="image" src="https://github.com/user-attachments/assets/afbc3f33-bd56-481c-abc2-5a7852103e3a" />
