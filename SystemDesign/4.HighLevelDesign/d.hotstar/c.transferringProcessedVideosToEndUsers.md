@@ -8,6 +8,6 @@
 - in case if some users doesnt have good network then there is no point in serving high quality video , video quality will be decreased , basically browser will understand users network speed and then server will send the video accordingly
 
 
-https://github.com/user-attachments/assets/38acbd23-617d-4913-bfbe-f12bac69be1d
+<img width=600 height=400 src="https://github.com/user-attachments/assets/38acbd23-617d-4913-bfbe-f12bac69be1d">
 
 
