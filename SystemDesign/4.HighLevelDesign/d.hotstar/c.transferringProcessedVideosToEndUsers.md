@@ -19,12 +19,11 @@
 - another thing we can use is WebRTC (peer to peer based (works via UDP might send unordered chunks))
 - DASH HLS is mostly designed for live streaming 
 
-![image](https://github.com/user-attachments/assets/ac7f170e-d43d-463b-9450-6d94c74ebdd8)
+<img width=600 height=800 src="https://github.com/user-attachments/assets/ac7f170e-d43d-463b-9450-6d94c74ebdd8">
 
-![image](https://github.com/user-attachments/assets/73477474-1c24-434d-b97c-cc9128ab2164)
+<img width=600 height=400 src="https://github.com/user-attachments/assets/73477474-1c24-434d-b97c-cc9128ab2164">
 
-
-![image](https://github.com/user-attachments/assets/38be3dcc-9006-47aa-abf7-7ccf35da4bcb)
+<img width=600 height=400 src="https://github.com/user-attachments/assets/38be3dcc-9006-47aa-abf7-7ccf35da4bcb">
 
 
 
