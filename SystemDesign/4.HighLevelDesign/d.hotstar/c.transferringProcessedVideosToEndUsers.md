@@ -10,4 +10,11 @@
 
 <img width=600 height=400 src="https://github.com/user-attachments/assets/38acbd23-617d-4913-bfbe-f12bac69be1d">
 
-
+- now the question arises is that how are we going to send the processed video to end users
+- we will setup multiple servers in different locations as shown in image below
+- why different servers and directly , well the speed of propagation of video might not be fast , to speed things up we will be using severs in different countries locations
+- processed video will be transferred using **RTMP** , cannot use DASH or HLS as RTMP gurantees the video quality and everything , and at user side we are using DASH or HLS just because we may have to compromise with the quality and reliable transfer
+- from servers to CDNs also we will use RTMP to transfer the videos
+- in case of directly sending the video from server to users we will be using HLS or DASH (HLS and DASH HTTP based (works via TCP) maintains orderly transfer)
+- another thing we can use is WebRTC (peer to peer based (works via UDP might send unordered chunks))
+- DASH HLS is mostly designed for live streaming 
