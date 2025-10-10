@@ -4,4 +4,5 @@
 - in case of any failure we will use queue for retry it will retry n number of times and then again if it fails then we can just inform user saying the message was not delivered
 
 
-![image](https://github.com/user-attachments/assets/edaafd76-6a1e-491c-bd96-41e9e5341f21)
+![image](https://github.com/user-attachments/assets/c9196e86-4364-4fbf-bc3e-cf9de3369c33)
+
