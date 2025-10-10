@@ -18,3 +18,13 @@
 - in case of directly sending the video from server to users we will be using HLS or DASH (HLS and DASH HTTP based (works via TCP) maintains orderly transfer)
 - another thing we can use is WebRTC (peer to peer based (works via UDP might send unordered chunks))
 - DASH HLS is mostly designed for live streaming 
+
+![image](https://github.com/user-attachments/assets/ac7f170e-d43d-463b-9450-6d94c74ebdd8)
+
+![image](https://github.com/user-attachments/assets/73477474-1c24-434d-b97c-cc9128ab2164)
+
+
+![image](https://github.com/user-attachments/assets/38be3dcc-9006-47aa-abf7-7ccf35da4bcb)
+
+
+
