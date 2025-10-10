@@ -1,1 +1,2 @@
+- as in the image below we can see that we are connecting to gateway , why ? its because internally whatsapp could be connecting to different protocols which might be using http headers , security which you might not even want hence we are using a Gateway
 - 
