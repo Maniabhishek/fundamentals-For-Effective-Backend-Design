@@ -23,3 +23,6 @@
 <img width="679" height="565" alt="image" src="https://github.com/user-attachments/assets/4898d3e2-b64e-48b0-9c22-a10fcc7a0497" />
 
 - how does the app start charging , well everytime the switch changes its state , it will notify the call manager , and call manager when it see the state call started it can save the infor and start coutning and from there on , once call is disconnected and get the new state , they can find out how long the call went through , then they can send this info to payment service 
+
+
+### Charging users , have a billing service , which will just return whether the call can go through , we will have things stored in another service already , maxtime duration a caller can have this way it will be simpler
