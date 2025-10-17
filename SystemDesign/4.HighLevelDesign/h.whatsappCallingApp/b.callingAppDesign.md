@@ -15,6 +15,7 @@
 
 - In case VOIP , when there is no voice no packets will be sent , but in case of PSTN it blocks certain amount of bandwidth for for both the user , it continuously sends data from A to B
 
+![image](https://github.com/user-attachments/assets/80b8d0ef-7d15-4607-a908-c8179fb52c67)
 
 
 - in the image we can see if a user B wants to make a call over PSTN, lets say B has its number and A has its own number , to establish a call, you neeed some bandwidth allocated for you and some bandwidth allocated for other whom you want to call in the switch
