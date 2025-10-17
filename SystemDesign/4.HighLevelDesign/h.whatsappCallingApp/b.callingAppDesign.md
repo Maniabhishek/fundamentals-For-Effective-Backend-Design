@@ -26,3 +26,5 @@
 
 
 ### Charging users , have a billing service , which will just return whether the call can go through , we will have things stored in another service already , maxtime duration a caller can have this way it will be simpler
+
+<img width="1720" height="1046" alt="image" src="https://github.com/user-attachments/assets/24f2d19d-795d-4a4a-aef7-3ec8420971dc" />
