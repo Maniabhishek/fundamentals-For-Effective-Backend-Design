@@ -10,4 +10,5 @@
 
 ### Fault tolerance 
 - in the above first image we can see we have many boxes and dependencies , what we can do is we can create intermdiary table , instead of having only push architecture from one box to another we can have hybrid approach , where lets say from the first filter phase once any boxes are done it will push the data to intermediary table and then this data can be pulled from subsequent boxes
+- this will increase storage cost , but to mitigate this issue , we can periodically delete the data as well lets say 5 days old data which might not be necessary
 - now if one of the boxes goes down , we should have health check api, in case any system goes down we should be able to spin up another server pretty soon 
