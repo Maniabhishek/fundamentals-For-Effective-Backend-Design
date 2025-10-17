@@ -2,3 +2,4 @@
 
 - once we have data inside the data lake , this is completely unstructured data, now to make sense out of these data , and before passing it to downstream services we will first make sensible filter , will do logical mapping of the data , and also if necessary sort the data
 - now when the downstream services like machine learning system , analytics services or anomaly detection system can use these data more efectively and efficiently
+- no single point of failure , even if one of the boxes fails , then only data relevant to that box will be lost
