@@ -18,7 +18,7 @@
 |----|---------|
 | 1  | ABCDE   |
 
--  what we need to do here is we need to develop a feature where we can server user all the history of changes
+-  what we need to do here is we need to develop a feature where we can serve user all the history of changes
 -  so we will also store the version history
 
 | id | version | content |
