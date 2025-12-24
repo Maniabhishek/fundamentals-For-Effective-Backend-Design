@@ -1,0 +1,4 @@
+- to connect to any remote repositories, we generate a ssh keys
+- why do we generate this ssh key, well when you generate a ssh key you will see to file being generate one will store the private key and another will have public key
+- public key which you will use to store it in github
+- now when you try to acces the remote repository you will be able to access it, as github will use this public key to authenticate your device before letting you work on that repo locally
