@@ -6,3 +6,4 @@
 -  caching
 -  fault tolerance
 
+[more about codecs](https://github.com/Maniabhishek/fundamentals-For-Effective-Backend-Design/blob/main/SystemDesign/1.fundamentals/7.codec.md)
