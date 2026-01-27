@@ -1,0 +1,9 @@
+- talk about the requirements (functional and non functional requriement)
+- Estimation and constraints
+- data model design
+- talk about the database
+- API Design
+- High level design (where you talk about different services you are going to make)
+- then go with the design
+- Database scale
+- Caching
