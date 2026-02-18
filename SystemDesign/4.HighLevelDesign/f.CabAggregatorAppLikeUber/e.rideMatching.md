@@ -37,6 +37,7 @@
 > coordinates.
 > We can save further computation by only subdividing a node after a certain
 > threshold.
+
 > Quadtree seems perfect for our use case, we can update the Quadtree every time we
 > receive a new location update from the driver. To reduce the load on the quadtree
 > servers we can use an in-memory datastore such as Redis to cache the latest updates.
