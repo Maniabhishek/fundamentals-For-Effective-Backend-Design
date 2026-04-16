@@ -111,7 +111,7 @@ Connection 6 → Font
 
 ## Key Idea of HTTP/2 
 - http/2 solves the problem of head of line blocking by introducing streams
-- A single TCP connection can carry multiple can carry multiple independent streams
+- A single TCP connection can carry multiple independent streams
 - think of a streams as a virtual request/response channel inside the same connection
 ```
 TCP Connection
