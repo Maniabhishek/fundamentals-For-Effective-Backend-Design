@@ -122,17 +122,18 @@ service UserService {
 
 ### When gRPC May NOT Be Ideal
 - gRPC has some tradeoffs.
-1️. Browser Support
+
+#### 1️. Browser Support
 - Browsers don't directly support gRPC well.
 - You need:
 - gRPC-web
-2. Debugging
+#### 2. Debugging
 - REST:
 - curl
 - Postman
 - Easy.
 - gRPC debugging requires special tools.
-3. Human Readability
+#### 3. Human Readability
 - REST:
   - JSON → readable
 - gRPC:
