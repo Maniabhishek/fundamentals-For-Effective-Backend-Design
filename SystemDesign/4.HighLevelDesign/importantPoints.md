@@ -1,0 +1,1 @@
+- while estimating always talk about traffic, storage and bandwidth
