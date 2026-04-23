@@ -7,7 +7,6 @@
 - one to one chat
 
 ### Non Functional Requirements
-- Non-Functional
 - Low latency (<100 ms)
 - High availability
 - Scales to billions of users
