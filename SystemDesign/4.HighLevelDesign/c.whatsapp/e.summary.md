@@ -3,7 +3,8 @@
 - data model design
 - talk about the database
 - API Design
-- High level design (where you talk about different services you are going to make)
+- High level design (Architectrual design (monolithic or microservices), services, inter-communication, (http, gRPC, message queues))
+- service discovery(service mapper or service registry or service mesh)
 - then go with the design
 - Database scale
 - Caching
