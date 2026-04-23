@@ -5,6 +5,7 @@
 - API Design
 - High level design (Architectrual design (monolithic or microservices), services, inter-communication, (http, gRPC, message queues))
 - service discovery(service mapper or service registry or service mesh)
+- real time messaging (pull vs push)
 - then go with the design
 - Database scale
 - Caching
