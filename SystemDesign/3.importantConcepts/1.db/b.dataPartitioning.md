@@ -7,4 +7,4 @@
 - Range Based Partitioning
 - Composite Partitioning
 
-- The above approaches can still cause uneven data and load distribution, we can solve this using Consistent hashing.
+> The above approaches can still cause uneven data and load distribution, we can solve this using Consistent hashing.
