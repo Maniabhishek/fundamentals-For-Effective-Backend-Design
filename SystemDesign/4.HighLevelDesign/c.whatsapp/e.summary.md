@@ -8,7 +8,7 @@
 - services like (chat services, profile service, notification service, presence service)
 - real time messaging (pull vs push)
 - features: last seen, notification(once a message is sent)
-- Data Partitioning, caching, Media access and storage
+- Data Partitioning, caching, Media access and storage, API gateway
 - then go with the design
 - Database scale
 - Caching
