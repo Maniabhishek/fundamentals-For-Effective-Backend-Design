@@ -1,0 +1,3 @@
+- It helps WebRTC peers in acquiring their public IP address
+- When a device sends a request, a STUN server answers with the public IP address and port.
+- It has limitation (STUN is not helpful if both peers are behind symmetric NATs. TURN servers become necessary in these situations.)
