@@ -8,7 +8,8 @@
 
 - How to Get Yourself Unstuck Tip #4 - Follow these rough guides to get the basic estimates for any system
   - Storage Estimation
-  - Bandwidth Estimation
+  - Traffic
+  - Bandwidth Estimation (Bandwidth = Requests per second × Data per request)
 - How to Get Yourself Unstuck Tip #5 “Would it be fine if the data in my system was occasionally wrong for a split second or so?”
   -  If the answer is yes, then you probably want eventual consistency.
   -  If the answer is no, then you’re looking for a strong consistency called linearizability.
