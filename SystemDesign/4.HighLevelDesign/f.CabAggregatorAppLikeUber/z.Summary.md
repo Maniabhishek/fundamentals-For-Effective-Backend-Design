@@ -23,4 +23,13 @@
 - capacity estimation (traffic, storage, bandwidth)
 - Data model (user, video, tags, views)
 - type of DB to use
-- 
+- API Design (request a ride, cancel a ride, accepts or deny a ride, start or end the trip, rate the trip)
+- HLD (architecture, customer service, driver service, ride service, trip service, payment service, notification service, analytics service)
+- interservice comm
+- Location Tracking
+- Ride matching (GeoHash, Quadtrees)
+- Race conditions
+- Data partitioning(Range, List, Hash, composite)
+- caching
+- scaling
+- bottlenecks
