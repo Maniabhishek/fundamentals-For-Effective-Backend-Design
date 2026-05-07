@@ -9,3 +9,10 @@
 
 #### What would be the best approach among the following to model a trip from pickup to drop off?
 > The trip is an object that would have states and transitions like start -> run -> complete -> payment complete. Modeling it as a transaction would be incorrect. Modeling it as a graph traversal is unnecessary. The triproute can be shown to a user separately user history.
+
+
+### Real systems rarely use pure quadtree directly
+- Production systems often use:
+  - Geohash
+  - S2 geometry (Google)
+  - H3 indexing (Uber)
