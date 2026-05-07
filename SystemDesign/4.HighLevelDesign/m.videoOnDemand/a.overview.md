@@ -1,1 +1,6 @@
-
+- Requirements (functional and non functional)
+- capacity estimation (traffic, storage, bandwidth)
+- Data model (user, video, tags, views)
+- type of DB to use
+- API design(upload, streaming, listAll, search)
+- HLD (User service, Stream service, Search Service, Media Service, Analytics Service)
