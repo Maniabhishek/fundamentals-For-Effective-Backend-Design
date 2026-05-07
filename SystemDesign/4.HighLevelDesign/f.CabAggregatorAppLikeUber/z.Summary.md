@@ -16,3 +16,11 @@
   - Geohash
   - S2 geometry (Google)
   - H3 indexing (Uber)
+
+# Summary
+
+- Requirements (functional and non functional)
+- capacity estimation (traffic, storage, bandwidth)
+- Data model (user, video, tags, views)
+- type of DB to use
+- 
