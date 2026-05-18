@@ -62,6 +62,9 @@
 
 <img width="400" height="369" alt="image" src="https://github.com/user-attachments/assets/dcbcde28-7bf5-4984-9d9d-2fcd42ea54a4" />
 
+### Pros:
+- memory efficient
+
 ### How to handle blocked requests
 - Option 1: Drop the requests and return the 429 error (too many requests) to the client.
 - Option 2: Put the requests to a queue so that they can be processed later. 
