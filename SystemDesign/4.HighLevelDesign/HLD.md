@@ -10,6 +10,7 @@
   - Storage Estimation
   - Traffic
   - Bandwidth Estimation (Bandwidth = Requests per second × Data per request)
+  - calculate processing power of any of the services (amount_of_data_ingested_in_that_service * read_per_mb * ) = total_reads per mb <=> now to calculate time it will take to process , assume each reads will few millisecs lets say 20ms then => total_reads_per_mb * time_to_process_1_mb
 - How to Get Yourself Unstuck Tip #5 “Would it be fine if the data in my system was occasionally wrong for a split second or so?”
   -  If the answer is yes, then you probably want eventual consistency.
   -  If the answer is no, then you’re looking for a strong consistency called linearizability.
