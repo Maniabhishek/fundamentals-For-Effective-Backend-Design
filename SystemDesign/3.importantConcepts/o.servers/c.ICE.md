@@ -1,4 +1,4 @@
-- ICE can manage peer negotiation regarding the most effective way to connect.
+- ICE(interactive connectivity establishment) can manage peer negotiation regarding the most effective way to connect.
 - It provides mechanisms for peers to connect directly or, if needed, through a relay using STUN and TURN
 
 ### Best Practices for ICE
